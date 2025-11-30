@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="geometry.GeometryController"
+      spacing="10"
+      style="-fx-padding: 10; -fx-background-color: #e8e8e8;">
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button text="➕ Прямоугольник" onAction="#addRectangle"
+                style="-fx-font-size: 14; -fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+        <Button text="🔵 Круг" onAction="#addCircle"
+                style="-fx-font-size: 14; -fx-background-color: #2196F3; -fx-text-fill: white;"/>
+        <Button text="🔺 Треугольник" onAction="#addTriangle"
+                style="-fx-font-size: 14; -fx-background-color: #FF9800; -fx-text-fill: white;"/>
+        <Button text="⬜ Квадрат" onAction="#addSquare"
+                style="-fx-font-size: 14; -fx-background-color: #9C27B0; -fx-text-fill: white;"/>
+        <Button text="🗑️ Очистить" onAction="#clearCanvas"
+                style="-fx-font-size: 14; -fx-background-color: #f44336; -fx-text-fill: white;"/>
+        <Button text="❓ Справка" onAction="#showHelp"
+                style="-fx-font-size: 14; -fx-background-color: #607D8B; -fx-text-fill: white;"/>
+    </HBox>
+
+    <Pane fx:id="canvasPane" VBox.vgrow="ALWAYS"
+          style="-fx-background-color: white; -fx-border-color: #ccc; -fx-border-width: 1;">
+        <Canvas fx:id="canvas"/>
+    </Pane>
+
+    <HBox spacing="10">
+        <Label text="Управление:" style="-fx-font-weight: bold;"/>
+        <Label text="ЛКМ - перетаскивание"/>
+        <Label text="ПКМ - смена цвета"/>
+    </HBox>
+</VBox>
