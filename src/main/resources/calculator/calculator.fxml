@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="calculator.CalculatorController"
+      spacing="10"
+      style="-fx-padding: 20; -fx-background-color: #f0f0f0;">
+
+    <TextField fx:id="display"
+               style="-fx-font-size: 24; -fx-background-color: white; -fx-border-color: #ccc;"
+               VBox.vgrow="ALWAYS"/>
+
+    <GridPane hgap="5" vgap="5" VBox.vgrow="ALWAYS">
+        <columnConstraints>
+            <ColumnConstraint hgrow="ALWAYS" percentWidth="25"/>
+            <ColumnConstraint hgrow="ALWAYS" percentWidth="25"/>
+            <ColumnConstraint hgrow="ALWAYS" percentWidth="25"/>
+            <ColumnConstraint hgrow="ALWAYS" percentWidth="25"/>
+        </columnConstraints>
+
+        <rowConstraints>
+            <RowConstraint vgrow="ALWAYS" percentHeight="20"/>
+            <RowConstraint vgrow="ALWAYS" percentHeight="20"/>
+            <RowConstraint vgrow="ALWAYS" percentHeight="20"/>
+            <RowConstraint vgrow="ALWAYS" percentHeight="20"/>
+            <RowConstraint vgrow="ALWAYS" percentHeight="20"/>
+        </rowConstraints>
+
+        <!-- Первый ряд -->
+        <Button text="C" onAction="#clear" GridPane.columnIndex="0" GridPane.rowIndex="0"
+                style="-fx-font-size: 18; -fx-background-color: #ff6b6b; -fx-text-fill: white;"/>
+        <Button text="±" onAction="#toggleSign" GridPane.columnIndex="1" GridPane.rowIndex="0"
+                style="-fx-font-size: 18;"/>
+        <Button text="%" onAction="#percent" GridPane.columnIndex="2" GridPane.rowIndex="0"
+                style="-fx-font-size: 18;"/>
+        <Button text="/" onAction="#handleOperator" GridPane.columnIndex="3" GridPane.rowIndex="0"
+                style="-fx-font-size: 18; -fx-background-color: #4ecdc4; -fx-text-fill: white;"/>
+
+        <!-- Второй ряд -->
+        <Button text="7" onAction="#handleNumber" GridPane.columnIndex="0" GridPane.rowIndex="1"
+                style="-fx-font-size: 18;"/>
+        <Button text="8" onAction="#handleNumber" GridPane.columnIndex="1" GridPane.rowIndex="1"
+                style="-fx-font-size: 18;"/>
+        <Button text="9" onAction="#handleNumber" GridPane.columnIndex="2" GridPane.rowIndex="1"
+                style="-fx-font-size: 18;"/>
+        <Button text="×" onAction="#handleOperator" GridPane.columnIndex="3" GridPane.rowIndex="1"
+                style="-fx-font-size: 18; -fx-background-color: #4ecdc4; -fx-text-fill: white;"/>
+
+        <!-- Третий ряд -->
+        <Button text="4" onAction="#handleNumber" GridPane.columnIndex="0" GridPane.rowIndex="2"
+                style="-fx-font-size: 18;"/>
+        <Button text="5" onAction="#handleNumber" GridPane.columnIndex="1" GridPane.rowIndex="2"
+                style="-fx-font-size: 18;"/>
+        <Button text="6" onAction="#handleNumber" GridPane.columnIndex="2" GridPane.rowIndex="2"
+                style="-fx-font-size: 18;"/>
+        <Button text="-" onAction="#handleOperator" GridPane.columnIndex="3" GridPane.rowIndex="2"
+                style="-fx-font-size: 18; -fx-background-color: #4ecdc4; -fx-text-fill: white;"/>
+
+        <!-- Четвертый ряд -->
+        <Button text="1" onAction="#handleNumber" GridPane.columnIndex="0" GridPane.rowIndex="3"
+                style="-fx-font-size: 18;"/>
+        <Button text="2" onAction="#handleNumber" GridPane.columnIndex="1" GridPane.rowIndex="3"
+                style="-fx-font-size: 18;"/>
+        <Button text="3" onAction="#handleNumber" GridPane.columnIndex="2" GridPane.rowIndex="3"
+                style="-fx-font-size: 18;"/>
+        <Button text="+" onAction="#handleOperator" GridPane.columnIndex="3" GridPane.rowIndex="3"
+                style="-fx-font-size: 18; -fx-background-color: #4ecdc4; -fx-text-fill: white;"/>
+
+        <!-- Пятый ряд -->
+        <Button text="0" onAction="#handleNumber" GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="2"
+                style="-fx-font-size: 18;"/>
+        <Button text="." onAction="#handleDecimal" GridPane.columnIndex="2" GridPane.rowIndex="4"
+                style="-fx-font-size: 18;"/>
+        <Button text="=" onAction="#calculate" GridPane.columnIndex="3" GridPane.rowIndex="4"
+                style="-fx-font-size: 18; -fx-background-color: #45b7d1; -fx-text-fill: white;"/>
+    </GridPane>
+</VBox>
